@@ -2,60 +2,72 @@
   .main-cont
     %form
       .section-one
-        %span Section 1
-        %p Find out your BMI and help us lean about health/fitness lifestyle by answering couple of questions.
+        %h1 Calculate your Body Mass Index - BMI
+        %p Find out your BMI and help us learn about health/fitness lifestyle by answering couple of questions.
         = button_tag "Start", type: :button, class: 'start-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored'
-      = succeed "/" do
-        %br/
+        %br
       .section-two.hide
-        %span Section 2
+        .exp-container
+          %h2 General Information
+          %p To calculate your BMI we need to know your gender, age, weight and height.
         .question
           %p What is your gender?
-          %select
-            %option{:value => "male"} male
-            %option{:value => "female"} female
-          %br/
+          %lable{class:'mdl-radio mdl-js-radio mdl-js-ripple-effect', for:'g-option-1'}
+          %input{if: 'g-option-1', name: "gender", type: "radio", value: "male", class:'mdl-radio__button'}
+          %span{class:'mdl-radio__label'}Male
+          %br
+          %lable{class:'mdl-radio mdl-js-radio mdl-js-ripple-effect', for: 'g-option-2'}
+          %input{id: 'g-option-2', name: "gender", type: "radio", value: "female", class: 'mdl-radio__button'}
+          %span{class:'mdl-radio__label'}Female
+          %br
         .question
           %p How old are you?
-          %input{:name => "age", :type => "numbers"}
-            %br/
+          %input{name: "age", type: "numbers", class:'mdl-textfield__input'}
+            %br
           .question
             %p How tall are you??
-            %input{:name => "age", :type => "numbers"}
-              %input{:name => "age", :type => "numbers"}
-                %br/
-              .question
-                %p How much do you weigh?
-                %input{:name => "weight", :type => "numbers"}
-                  %br/
-                = button_tag 'Previous', type: :button, class: 'q1prev-button'
-                = button_tag 'Next', type: :button, class: 'q1next-button'
-              %br/
-              .section-three.hide
-                %span Section 3
-                .question
-                  %p Question one?
-                  %input{:name => "answear", :type => "radio", :value => "aone"}
-                    Answear 1
-                    %br
-                      %input{:name => "answear", :type => "radio", :value => "atwo"}
-                        Answear 2
-                        %br
-                          %input{:name => "answear", :type => "radio", :value => "athree"}
-                            Answear 3
-                          = button_tag 'Previous', type: :button, class: 'q2prev-button'
-                          = button_tag 'Next', type: :button, class: 'q2next-button'
-                        .section-four.hide
-                          %span Section 4
-                          .question
-                            %p Last question?
-                            %input{:name => "answear", :type => "radio", :value => "aone"}
-                              Answear 1
-                              %br
-                                %input{:name => "answear", :type => "radio", :value => "atwo"}
-                                  Answear 2
-                                  %br
-                                    %input{:name => "answear", :type => "radio", :value => "athree"}
-                                      Answear 3
-                                    = button_tag 'Previous', type: :button, class: 'q3prev-button'
-                                    = button_tag 'Im Done!', type: :submit, class: 'q3next-button'
+            %input{name: "height", type: "numbers", class:'mdl-textfield__input'}
+            %br
+          .question
+            %p How much do you weigh?
+            %input{name: "weight", type: "numbers", class:'mdl-textfield__input'}
+            %br
+            .button-container
+              = button_tag 'Previous', type: :button, class: 'q1prev-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored'
+              = button_tag 'Next', type: :button, class: 'q1next-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored'
+            %br
+      .section-three.hide
+        .exp-container
+          %h2 Lifestyle Information
+          %p Lorem ipsum dolor sit amet, ut mi nunc non in, tempus id lacinia at arcu ut neque.
+        .question
+          %p Question one?
+          %input{name: "answear", type: "radio", value: "aone"}
+            Answer 1
+            %br
+              %input{name: "answear", type: "radio", value: "atwo"}
+                Answer 2
+                %br
+                  %input{name: "answear", type: "radio", value: "athree"}
+                    Answer 3
+
+                  .button-container
+                    = button_tag 'Previous', type: :button, class: 'q2prev-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored'
+                    = button_tag 'Next', type: :button, class: 'q2next-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored'
+      .section-four.hide
+        .exp-container
+          %h2 Lifestyle Information
+          %p Lorem ipsum dolor sit amet, ut mi nunc non in, tempus id lacinia at arcu ut neque.
+        .question
+          %p Last question?
+          %input{name: "answear", type: "radio", value: "aone"}
+          Answer 1
+          %br
+          %input{name: "answear", type: "radio", value: "atwo"}
+          Answer 2
+          %br
+          %input{name: "answear", type: "radio", value: "athree"}
+            Answer 3
+          .button-container
+            = button_tag 'Previous', type: :button, class: 'q3prev-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored'
+            = button_tag 'Im Done!', type: :submit, class: 'q3next-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored'
