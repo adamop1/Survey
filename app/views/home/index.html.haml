@@ -12,14 +12,16 @@
           %p To calculate your BMI we need to know your gender, age, weight and height.
         .question
           %p What is your gender?
-          %lable{class:'mdl-radio mdl-js-radio mdl-js-ripple-effect', for:'g-option-1'}
-          %input{if: 'g-option-1', name: "gender", type: "radio", value: "male", class:'mdl-radio__button'}
-          %span{class:'mdl-radio__label'}Male
+
+          %label.mdl-radio.mdl-js-radio.mdl-js-ripple-effect{for: "option-1"}
+            %input#option-1.mdl-radio__button{name: "gender", type: "radio", value: "male"}/
+            %span.mdl-radio__label Male
           %br
-          %lable{class:'mdl-radio mdl-js-radio mdl-js-ripple-effect', for: 'g-option-2'}
-          %input{id: 'g-option-2', name: "gender", type: "radio", value: "female", class: 'mdl-radio__button'}
-          %span{class:'mdl-radio__label'}Female
+          %label.mdl-radio.mdl-js-radio.mdl-js-ripple-effect{for: "option-2"}
+            %input#option-2.mdl-radio__button{name: "gender", type: "radio", value: "female"}/
+            %span.mdl-radio__label Female
           %br
+
         .question
           %p How old are you?
           %input{name: "age", type: "numbers", class:'mdl-textfield__input'}
